@@ -1,36 +1,4 @@
-<?php
-    $insert = false;
-    if (isset($_POST['name'])) {
-        # code...
-        $server = "localhost";
-        $username = "root";
-    $password = "";
 
-    $con = mysqli_connect($server,$username,$password);
-
-    if (!$con) {
-        die("connection to this database failed due to" . mysqli_connect_error());
-
-    }
-    
-        // echo "Server connected sucessfully";
-    $name = $_POST["name"];
-    $gender = $_POST["gender"];
-    $age = $_POST["age"];
-    $mail = $_POST["email"];
-    $phone = $_POST["phone"];
-    
-    $sql = "INSERT INTO `info`.`info` (`name`, `gender`, `age`, `email`, `phone`, `dt`) VALUES ('$name', '$gender', '$age', '$mail', '$phone', current_timestamp())";
-    // echo $sql;
-    if($con -> query($sql) == true){
-        // echo "Successfully inserted";
-        $insert = true;
-    }
-    $con -> close();
-    }
-
-    
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,6 +15,40 @@
 </head>
 
 <body>
+<?php
+    $insert = false;
+    if (isset($_POST['name'])) {
+        # code...
+        $server = "localhost";
+        $username = "root";
+        $password = "";
+
+        $con = mysqli_connect($server,$username,$password);
+
+        if (!$con) {
+            die("connection to this database failed due to" . mysqli_connect_error());
+
+        }
+        
+            // echo "Server connected sucessfully";
+        $name = $_POST["name"];
+        $gender = $_POST["gender"];
+        $age = $_POST["age"];
+        $mail = $_POST["email"];
+        $phone = $_POST["phone"];
+        
+        $sql = "INSERT INTO `info`.`info` (`name`, `gender`, `age`, `email`, `phone`, `dt`) VALUES ('$name', '$gender', '$age', '$mail', '$phone', current_timestamp())";
+        // echo $sql;
+        if($con -> query($sql) == true){
+            // echo "Successfully inserted";
+            $insert = true;
+        }
+        $con -> close();
+    }
+
+    
+?>
+
     <div class="container">
         <h1>Welcom to SVIT, Vasad US Trip form</h1>
         <p>Enter the details for confirm your participation in US trip</p>
@@ -77,6 +79,7 @@
         </form>
     </div>
     <!-- INSERT INTO `info` (`sr_no`, `name`, `gender`, `age`, `email`, `phone`, `dt`) VALUES ('1', 'SMART', 'male', '20', 'this@this.com', '1234567891', current_timestamp()); -->
+    
 </body>
 
 </html>
