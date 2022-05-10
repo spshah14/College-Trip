@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body::before{
+    content: "";
+    position: absolute;
+    background: url('bg.jpg') no-repeat center center/cover;
+    top:0px;
+    left:0px;
+    bottom: 0px;
+    width: 100%;
+    z-index: -1;
+    opacity:0.65;
+}
+
+.container{
+    /* background-color: rgb(193, 220, 220); */
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 200%;
+    margin: 120px auto;
+    /* text-align: center; */
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    font-family: 'PT Serif', serif;
+    color: rgb(0, 0, 0);
+}
+    
+
+.container h1{
+    font-size: 35px;
+    padding: 5px;
+}
+.container p{
+    padding: 5px;
+    font-size: 20px;
+}
+.container .submitMsg{
+    color: #600000;
+    font-weight: 600;
+}
+.container form{
+    margin: 15px;
+    padding: 15px;
+    font-size: 20px;
+}
+
+/* .container form input{
+    margin: 7px;
+    padding: 5px 100px 5px 5px;
+    /* background: transparent; */
+    /* color: rgb(0, 0, 0); */
+/* } */ 
+.container .form-data{
+    margin: 10px auto;
+    padding: 5px 100px;
+    
+    color: black;
+    border: 0.5px solid #181616;
+    border-radius: 5px;
+}
+.container form label{
+    font-size: 18px;
+}
+.container form button{
+    display: block;
+    margin: 7px auto;
+    padding: 3px 15px;
+    border: 2px solid #1111eb5e;
+    border-radius: 7px;
+    outline: none;
+}
